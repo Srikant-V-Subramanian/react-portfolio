@@ -1,0 +1,68 @@
+// Import all of Bootstrap's CSS
+@import "bootstrap/scss/bootstrap";
+@import "./navbar.scss";
+@import "./about.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  overflow: hidden;
+}
+
+.landingPage * {
+  margin-top: 1.5rem;
+}
+
+.landingPage {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  flex-direction: column;
+  text-align: center;
+
+}
+
+.landingPage > h1 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  position: relative;
+  font-size: 100px;
+  color: white;
+  -webkit-text-stroke: 1.5px #8ce68c;
+}
+
+.landingPage > h1::before {
+  -webkit-text-stroke: 1px #8ce68c;
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  color: #8ce68c;
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+}
+
+.landingPage > h5 {
+  font-size: 20px;
+  margin: 10px 1em 0;
+}
+
+@keyframes animate {
+  0%,
+  10%,
+  95% {
+    width: 0;
+  }
+
+  70%,
+  75% {
+    width: 100%;
+  }
+}
